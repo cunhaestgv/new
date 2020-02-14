@@ -10,7 +10,7 @@ public class UserTest {
 
         assertEquals("Maria", u.getName());
 
-        assertEquals("Lisboa", u.getAddress());
+        assertEquals("Viseu", u.getAddress());
 
 
 
