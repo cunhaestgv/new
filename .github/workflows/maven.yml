@@ -20,10 +20,9 @@ jobs:
     steps:
     - name: Deploy to nerdhood.de
       uses: appleboy/ssh-action@master
-      env:
-        USERNAME: teste
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
-        HOST: 193.137.7.54
-        SCRIPT: |
-          whoami
+        script: whoami
         
