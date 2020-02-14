@@ -15,8 +15,13 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Upload Maven build artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: artifact
-        path: github-actions-java-maven/target/github-actions-java-maven.jar
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to nerdhood.de
+      uses: appleboy/ssh-action@master
+      env:
+        USERNAME: teste
+        HOST: 193.137.7.54
+        SCRIPT: ~/deployment.sh
+        KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
