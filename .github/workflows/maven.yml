@@ -24,4 +24,4 @@ jobs:
         USERNAME: teste
         HOST: 193.137.7.54
         SCRIPT: ~/deployment.sh
-        KEY: ${{ secrets.KEY }}
+        password: ${{ secrets.PASSWORD }}
